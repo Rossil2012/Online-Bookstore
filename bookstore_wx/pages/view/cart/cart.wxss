@@ -1,0 +1,4 @@
+.submitBar {
+  bottom: 10vh !important;
+  position: fixed !important;
+}

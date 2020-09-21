@@ -1,0 +1,39 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #00F5FF, #ffffff);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.avatarBox {
+  width: 40vw;
+  height: 40vw;
+  margin-top: 5vh;
+  border-radius: 40vw;
+  box-shadow: 0 0 40px 2px yellowgreen;
+}
+
+.usernameBox {
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+
+.username {
+  font-size: 25px;
+  font-family: fantasy;
+  font-weight: 900;
+}
+
+.panelBox {
+  border-color: black;
+  border: 0px solid black;
+  border-radius: 8vw;
+  box-shadow: 0 0 10px 0.4px black;
+  padding-top: 4vh;
+  height: 35vh;
+  width: 80vw;
+}

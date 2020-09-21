@@ -1,0 +1,12 @@
+function makeBrief(text, flag, maxLen) {
+  if (flag || text.length < maxLen) {
+    return text;
+  } else {
+    return text.substring(0, maxLen - 3) + '...';
+  }
+}
+
+
+module.exports = {
+  makeBrief: makeBrief
+}

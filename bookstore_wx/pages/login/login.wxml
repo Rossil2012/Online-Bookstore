@@ -1,0 +1,30 @@
+<van-notify id="van-notify" />
+<view class="container">
+  <image src="../assets/logo.png" class="logo" />
+  <van-cell-group>
+    <van-field
+      class="input"
+      model:value="{{ username }}"
+      label="Username"
+      placeholder="username..."
+    />  
+
+    <van-field
+      class="input"
+      model:value="{{ password }}"
+      type="{{ pwdVisible ? '' : 'password' }}"
+      icon= "{{ pwdVisible ? 'eye-o' : 'closed-eye' }}"
+      label="Password"
+      placeholder="password..."
+      bind:click-icon="onClickVisible"
+    />
+  </van-cell-group>
+  <view class="submit">
+    <van-button
+      type="primary" 
+      custom-style="width:250px;"
+      round 
+      bind:click="submit"
+      >Login</van-button>
+  </view>
+</view>

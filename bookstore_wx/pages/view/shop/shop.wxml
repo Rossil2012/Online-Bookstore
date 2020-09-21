@@ -1,0 +1,72 @@
+<wxs module="tools" src="./shop.wxs"></wxs>
+<view>
+  <van-notice-bar
+    mode="closeable"
+    text="{{ noticeText }}"
+  />
+  <van-sticky>
+    <view>
+      <!-- <van-dropdown-menu>
+        <van-dropdown-item 
+          model:value="{{ category }}"
+          options="{{ categoryOpt }}" 
+          bind:change="onCategoryChange"
+        />
+        <van-dropdown-item 
+          model:value="{{ filter }}"
+          options="{{ filterOpt }}" 
+          bind:change="onFilterChange"
+        />
+      </van-dropdown-menu> -->
+      <van-search
+        model:value="{{ searchText }}"
+        placeholder="Searching..."
+        shape="round"
+        background="white"
+        use-action-slot
+        bind:change="onSearch"
+      >
+        <van-button 
+          slot="action" 
+          icon="{{ isDetail ? 'apps-o' : 'bars' }}" 
+          round
+          custom-style="width: 45rpx; height: 75rpx;" 
+          bind:tap="changeView" 
+        />
+      </van-search>
+    </view>
+  </van-sticky>
+
+  <view wx:if="{{ isDetail }}">
+    <view wx:for="{{ searchedBooks }}" wx:for-item="ite" wx:key="id">
+      <van-card
+        price="{{ ite.price }}"
+        desc="{{ tools.makeBrief(ite.description, false, 50) }}"
+        title="{{ ite.name }}"
+        thumb="{{ ite.image }}"
+        data-src="{{ ite.bookId }}"
+        bindtap="tapDetail"
+        wx:if="{{ ite.status !== 0 }}"
+      />
+    </view>
+  </view>
+
+  <van-grid column-num="2" wx:if="{{ !isDetail }}">
+    <van-grid-item use-slot wx:for="{{ searchedBooks }}" wx:for-item="ite" wx:key="id">
+      <view 
+        wx:if="{{ !isDetail && ite.status !== 0 }}"
+        data-src="{{ ite.bookId }}"
+        bindtap="tapDetail"
+      >
+        <van-image
+          class="image"
+          width="50vw"
+          height="50vw"
+          lazy-load
+          src="{{ ite.image }}"
+        />
+      </view>
+    </van-grid-item>
+  </van-grid>
+  <view style="height: 10vh;"/>
+</view>

@@ -1,0 +1,47 @@
+<van-notify id="van-notify" />
+<view class="wrapper">
+  <van-image
+    width="100vw" 
+    height="100vw"
+    src="{{ bookDetail.image }}"
+  />
+  <van-panel 
+    title="{{ bookDetail.name }}" 
+    desc="{{ bookDetail.type }} {{ bookDetail.author }}" 
+    status="¥{{ bookDetail.price }}" 
+    style="width: 100vw;"
+  />
+
+  <view style="margin-left: 5vw; margin-right: 5vw;">
+    <text style="display: block;">
+      {{ bookDetail.description }}
+    </text>
+  </view>
+
+  <view style="height: 12vh;" />
+
+  <view>
+    <van-goods-action>
+      <van-goods-action-icon 
+        icon="{{ isLiked ? 'like' : 'like-o' }}"
+        color="{{ isLiked ? 'red' : null }}"
+        text="Like"
+        bind:click="onClickLike"
+      />
+      <van-goods-action-icon 
+        icon="cart-o" 
+        text="Cart" 
+        bind:click="onClickCart" 
+      />
+      <van-goods-action-button
+        text="Add to Cart"
+        type="warning"
+        bind:click="onClickAdd"
+      />
+      <van-goods-action-button 
+        text="Purchase" 
+        bind:click="onClickCart" 
+      />
+    </van-goods-action>
+  </view>
+</view>

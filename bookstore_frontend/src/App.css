@@ -1,0 +1,22 @@
+*:focus {
+    outline: 0;
+}
+
+@keyframes submit {
+    from {
+        border-radius: 77% 23% 68% 32% / 29% 60% 40% 71%;
+        box-shadow: 0 0 10px 5px #4e555b;
+    }
+    to {
+        border-radius: 30px;
+        box-shadow: 0 0 10px 5px #ffffff;
+    }
+}
+
+a:link {
+    text-decoration: none;
+
+    color: #000000;
+}
+
+

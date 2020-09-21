@@ -1,0 +1,16 @@
+<view class="wrapper">
+  <view class="avatarBox">
+    <van-image
+      src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1694869873,4147554504&fm=15&gp=0.jpg"
+      round
+      fit="contain"
+      width="40vw"
+      height="40vw"
+    />
+  </view>
+  <view class="usernameBox">
+    <text class="username">Rossil & Rabi</text>
+  </view>
+  <view class="panelBox">
+  </view>
+</view>

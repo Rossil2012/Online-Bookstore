@@ -1,0 +1,29 @@
+<van-notify id="van-notify" />
+<view class="wrapper">
+  <view wx:for="{{ cartItems }}" wx:for-item="ite" wx:key="id">
+      <van-card
+        price="{{ ite.price }}"
+        title="{{ ite.name }}"
+        thumb="{{ ite.image }}"
+        tag="{{ ite.type }}"
+      >
+        <view slot="num">
+          <van-stepper 
+            data-src="{{ ite.bookId }}" 
+            value="{{ ite.amount }}" 
+            min="1" 
+            bind:change="onCartNumChange" 
+          />
+        </view>
+        <view slot="footer">
+          <van-button size="mini" type="danger" bind:click="onRemove" data-src="{{ ite.bookId }}">Remove</van-button>
+        </view>
+      </van-card>
+  </view>
+  <van-submit-bar
+    price="{{ costSum }}"
+    button-text="Submit"
+    bind:submit="onSubmit"
+    custom-class="submitBar"
+  />
+</view>
